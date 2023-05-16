@@ -10,7 +10,7 @@ const Main = (props) => {
   const [ people, setPeople ] = useState(null);
 
 
-  const URL = "http://localhost:4000/people/";
+  const URL = "https://person-backend.onrender.com/people/";
 
   const getPeople = async () => {
     const response = await fetch(URL)
@@ -54,7 +54,9 @@ const Main = (props) => {
     getPeople();
   }
 
-  useEffect(() => getPeople, []);
+  useEffect(() => {
+    getPeople();
+  }, []);
 
   return (
     <Routes>
